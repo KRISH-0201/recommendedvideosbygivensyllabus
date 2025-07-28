@@ -1,0 +1,20 @@
+# Python specific ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables - CRITICAL for API keys
+.env
+
+# NLTK data (often downloaded to user-specific paths, not needed in repo)
+nltk_data/
+
+# Flask development specific
+instance/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,5 +1,7 @@
 # 🎓 StudyFind — Syllabus-Based YouTube Video Recommender
 
+**🌟 Live Demo:** [https://recommendedvideosbygivensyllabus.onrender.com](https://recommendedvideosbygivensyllabus.onrender.com)
+
 Paste any syllabus, topic list, or subject name — the app automatically extracts key topics and finds the most relevant YouTube educational videos for each one. **No API key required!**
 
 ## ✨ Features
@@ -30,9 +32,9 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Open your browser at `http://localhost:5000`
+Open your browser at `http://localhost:8080`
 
-> **No `.env` file needed!** This app uses `youtube-search-python` which works without any API key.
+> **No `.env` file needed!** This app uses an internal Python `httpx` web scraper which works without any API key.
 
 ---
 
@@ -41,17 +43,12 @@ Open your browser at `http://localhost:5000`
 1. Push your project to GitHub
 2. Go to [render.com](https://render.com) → **New** → **Web Service**
 3. Connect your GitHub repo
-4. Render auto-detects `render.yaml` — click **Deploy**
-5. Your app is live! 🎉
+4. Render will ask for some deployment settings. Ensure you have:
+   - **Start Command:** `gunicorn app:app`
+   - **Environment Variable:** `PYTHON_VERSION` set to `3.11.0` (or newer)
+5. Click **Deploy** and your app is live! 🎉
 
-## ☁️ Deploy to Railway (Alternative)
 
-1. Push your project to GitHub  
-2. Go to [railway.app](https://railway.app) → **New Project** → **Deploy from GitHub Repo**
-3. Railway auto-detects `Procfile` and deploys using gunicorn
-4. Your app is live in ~2 minutes!
-
----
 
 ## 🛠️ Tech Stack
 
@@ -59,7 +56,7 @@ Open your browser at `http://localhost:5000`
 |-------|-----------|
 | Backend | Python + Flask |
 | NLP | RAKE-NLTK |
-| YouTube Search | youtube-search-python (no API key!) |
+| YouTube Search | `httpx` raw scraper (no API key!) |
 | Frontend | Bootstrap 5 + Vanilla CSS + Animate.css |
 | Production Server | Gunicorn |
 | Deployment | Render / Railway |
@@ -86,7 +83,7 @@ recommendedvideosbygivensyllabus/
 
 - No API keys are stored or required
 - No user data is collected or stored
-- All searches happen server-side via `youtube-search-python`
+- All searches happen server-side via `httpx` scraping.
 
 ---
 

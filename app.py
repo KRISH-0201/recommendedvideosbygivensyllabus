@@ -4,6 +4,7 @@ import nltk  # type: ignore[import-untyped]
 import httpx
 import json
 import re
+import os
 
 from itertools import islice
 
@@ -17,7 +18,7 @@ for _pkg in ("punkt", "punkt_tab", "stopwords"):
         pass
 
 app = Flask(__name__)
-app.secret_key = "krish_secret_key_2025"
+app.secret_key = os.getenv("SECRET_KEY")
 
 TRUSTED_CHANNELS = {
     "Khan Academy",

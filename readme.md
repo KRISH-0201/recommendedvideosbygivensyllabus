@@ -1,6 +1,6 @@
 # 🎓 StudyFind — Syllabus-Based YouTube Video Recommender
 
-**🌟 Live Demo:** [https://recommendedvideosbygivensyllabus.onrender.com](https://recommendedvideosbygivensyllabus.onrender.com/)
+**🌟 Live Demo:** [https://recommendedvideosbygivensyllabus.onrender.com](https://recommendedvideosbygivensyllabus-1.onrender.com/)
 
 Paste any syllabus, topic list, or subject name — the app automatically extracts key topics and finds the most relevant YouTube educational videos for each one. **No API key required!**
 
